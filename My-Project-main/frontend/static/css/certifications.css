@@ -1,0 +1,111 @@
+/*
+frontend/static/css/certifications.css
+Styles for Certifications layout, badges, card layouts, and verify links.
+*/
+
+.certs-section {
+    padding: 5rem 0;
+}
+
+.certs-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.certs-header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.certs-header p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ── Certifications Grid ── */
+.certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+/* ── Card Styling ── */
+.cert-card {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(140, 123, 107, 0.08);
+    border-color: var(--color-accent);
+}
+
+/* Accent Badge Bubble */
+.cert-badge-wrapper {
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--color-bg-base);
+    border: 1.5px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    transition: var(--transition-bounce);
+}
+
+.cert-card:hover .cert-badge-wrapper {
+    transform: rotate(15deg) scale(1.1);
+    background-color: var(--color-bg-alt);
+    border-color: var(--color-accent);
+}
+
+.cert-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.6rem;
+    padding-right: 1.5rem; /* Make space for badge */
+}
+
+.cert-issuer {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--color-text-main);
+    margin-bottom: 0.2rem;
+}
+
+.cert-date {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.8rem;
+}
+
+.cert-verify-link {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: var(--transition-smooth);
+}
+
+.cert-verify-link:hover {
+    color: var(--color-text-main);
+}

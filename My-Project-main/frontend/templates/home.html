@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-grid">
+            
+            <!-- Left Column: Profile Photo & Accent -->
+            <div class="hero-image-wrapper reveal">
+                <div class="hero-image-bg-block"></div>
+                <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Akshay D profile picture" class="hero-image">
+            </div>
+            
+            <!-- Right Column: Welcome Greeting -->
+            <div class="hero-content reveal">
+                <div class="hero-title-group">
+                    <h1 class="hero-greeting">Hi!</h1>
+                    <h2 class="hero-name">I'm Akshay D</h2>
+                </div>
+                <p class="hero-description">
+                    Passionate Full-Stack developer focused on building responsive websites and web applications. i enjoy writing clean code, solving complex problems.
+                </p>
+                <a href="/projects" class="hero-cta">View Work</a>
+            </div>
+            
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="about-section">
+    <div class="container">
+        
+        <!-- Header -->
+        <div class="about-header reveal">
+            <h1>About Me</h1>
+            <p>A brief insight into my background, path, and professional journey.</p>
+        </div>
+        
+        <!-- Bio and details grid -->
+        <div class="about-grid">
+            <div class="about-img-frame reveal">
+                <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Akshay D portrait" class="about-img">
+            </div>
+            <div class="about-details reveal">
+                <h2>I build high-performance web systems from scratch.</h2>
+                <p>
+                    I am a dedicated developer with deep capabilities in designing and writing software systems. Specialising in Python backend development with Flask/Django, and clean modern user interfaces with HTML, CSS, and JavaScript.
+                </p>
+                <p>
+                    I focus heavily on writing clean, modular code, optimizing databases, and designing systems following patterns like Model-View-Controller (MVC) to build architectures that are simple to scale and maintain.
+                </p>
+                
+                <ul class="personal-info-list">
+                    <li><strong>Full Name:</strong> Akshay D</li>
+                    <li><strong>Email:</strong> akshay.d@example.com</li>
+                    <li><strong>Location:</strong> Bangalore, India</li>
+                    <li><strong>Degree:</strong> Bachelor of Engineering in CSE</li>
+                    <li><strong>Status:</strong> Open to Opportunities</li>
+                    <li><strong>Freelance:</strong> Available</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- History / Timeline -->
+        <div class="timeline-section">
+            <h2 class="timeline-title reveal">Education & Experience</h2>
+            <div class="timeline-container">
+                
+                <div class="timeline-item reveal">
+                    <div class="timeline-date">2024 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Full-Stack Developer</h3>
+                        <h4>Freelance & Open Source Contributor</h4>
+                        <p>Designing, implementing, and deploying custom software tools, websites, and APIs for international clients. Developing modular backend logic and designing interactive UI layouts.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item reveal">
+                    <div class="timeline-date">2022 - 2024</div>
+                    <div class="timeline-content">
+                        <h3>Software Developer Intern</h3>
+                        <h4>Innovate Tech Solutions</h4>
+                        <p>Developed API endpoints using Flask/Django, optimised database queries in SQLite/PostgreSQL, and helped migrate a legacy server framework to modern modular designs.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item reveal">
+                    <div class="timeline-date">2020 - 2024</div>
+                    <div class="timeline-content">
+                        <h3>Bachelor of Engineering in CSE</h3>
+                        <h4>Technical University</h4>
+                        <p>Completed coursework in Algorithms, Database Systems, Software Engineering, and Web Development. Graduated with honors (CGPA 9.2/10.0).</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</section>
+{% endblock %}

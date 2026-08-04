@@ -1,0 +1,214 @@
+/*
+frontend/static/css/contact.css
+Styles for the Contact page form, details cards, inputs, error states, and notification messages.
+*/
+
+.contact-section {
+    padding: 5rem 0;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.contact-header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-header p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ── Contact Layout Grid ── */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+/* ── Left Column: Contact Cards ── */
+.contact-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-info-card {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+}
+
+.contact-info-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(140, 123, 107, 0.08);
+    border-color: var(--color-accent);
+}
+
+.contact-info-icon {
+    font-size: 2.2rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--color-bg-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contact-info-details h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+}
+
+.contact-info-details p,
+.contact-info-details a {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-text-muted);
+}
+
+.contact-info-details a:hover {
+    color: var(--color-text-main);
+}
+
+/* ── Right Column: Form Styling ── */
+.contact-form-container {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    padding: 3rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.form-group-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.form-group label {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text-main);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.form-group input,
+.form-group textarea {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.9rem 1.2rem;
+    border-radius: var(--border-radius-md);
+    background-color: var(--color-bg-base);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-main);
+    outline: none;
+    transition: var(--transition-smooth);
+    width: 100%;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--color-accent);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(140, 123, 107, 0.1);
+}
+
+/* Error states */
+.form-group.error input,
+.form-group.error textarea {
+    border-color: #e74c3c;
+    background-color: rgba(231, 76, 60, 0.02);
+}
+
+.error-message {
+    font-size: 0.8rem;
+    color: #e74c3c;
+    position: absolute;
+    bottom: -1.3rem;
+    left: 0.2rem;
+}
+
+/* Form submission alerts */
+.alert-box {
+    padding: 1.2rem 1.5rem;
+    border-radius: var(--border-radius-md);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: none;
+    align-items: center;
+    gap: 0.8rem;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.alert-success {
+    background-color: rgba(46, 204, 113, 0.1);
+    border: 1px solid rgba(46, 204, 113, 0.3);
+    color: #27ae60;
+    display: flex;
+}
+
+.alert-error {
+    background-color: rgba(231, 76, 60, 0.1);
+    border: 1px solid rgba(231, 76, 60, 0.3);
+    color: #c0392b;
+    display: flex;
+}
+
+/* ── Keyframe Animations ── */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive Styling ── */
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .form-group-row {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+    }
+    .contact-form-container {
+        padding: 2rem 1.5rem;
+    }
+}

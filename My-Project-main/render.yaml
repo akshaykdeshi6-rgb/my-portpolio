@@ -1,0 +1,17 @@
+# render.yaml – Render Blueprint for Akshay D Portfolio
+# Docs: https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: akshay-d-portfolio
+    plan: free
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: SECRET_KEY
+        generateValue: true     # Render will auto-generate a secure random secret key
+      - key: PYTHON_VERSION
+        value: 3.11.15

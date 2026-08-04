@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Full-Stack Developer Portfolio for Akshay D. Discover projects, skills, certifications, and achievements.">
+    <title>Akshay D | Portfolio</title>
+    
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    
+    <!-- Page-Specific CSS -->
+    {% if active == 'home' %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    {% elif active == 'about' %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+    {% elif active == 'projects' %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/projects.css') }}">
+    {% elif active == 'certifications' %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/certifications.css') }}">
+    {% elif active == 'skills' %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/skills.css') }}">
+    {% elif active == 'achievements' %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/achievements.css') }}">
+    {% elif active == 'contact' %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+    {% endif %}
+</head>
+<body>
+
+    <!-- ── Header Navigation ── -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="/" class="nav-logo">AKSHAY D</a>
+            
+            <button class="mobile-nav-toggle" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="/" class="{% if active == 'home' %}active{% endif %}">Home</a></li>
+                <li><a href="/about" class="{% if active == 'about' %}active{% endif %}">About</a></li>
+                <li><a href="/projects" class="{% if active == 'projects' %}active{% endif %}">Projects</a></li>
+                <li><a href="/certifications" class="{% if active == 'certifications' %}active{% endif %}">Certifications</a></li>
+                <li><a href="/skills" class="{% if active == 'skills' %}active{% endif %}">Skills</a></li>
+                <li><a href="/achievements" class="{% if active == 'achievements' %}active{% endif %}">Achievements</a></li>
+                <li><a href="/contact" class="{% if active == 'contact' %}active{% endif %}">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ── Main Content Block ── -->
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- ── Footer ── -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">© 2026 Akshay D. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/akshayd" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <!-- GitHub Simple SVG -->
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                        <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+                    </svg>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <!-- LinkedIn Simple SVG -->
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global scripts -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    
+    <!-- Page-specific script -->
+    {% block scripts %}{% endblock %}
+
+</body>
+</html>

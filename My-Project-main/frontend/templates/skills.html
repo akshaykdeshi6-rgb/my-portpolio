@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="skills-section">
+    <div class="container">
+        
+        <!-- Header -->
+        <div class="skills-header reveal">
+            <h1>My Skills</h1>
+            <p>Technical expertise and capabilities accumulated over years of developing applications.</p>
+        </div>
+        
+        <!-- Skills categorised grid -->
+        <div class="skills-grid">
+            {% for group in skill_groups %}
+            <div class="skills-group-card reveal">
+                <div class="skills-group-header">
+                    <span class="skills-group-icon">{{ group.icon }}</span>
+                    <h2>{{ group.category }}</h2>
+                </div>
+                
+                <div class="skills-list">
+                    {% for skill in group.skills %}
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">{{ skill.name }}</span>
+                            <span class="skill-percentage">{{ skill.level }}%</span>
+                        </div>
+                        <div class="progress-track">
+                            <!-- JS will slide the width from 0 to data-width on scroll trigger -->
+                            <div class="progress-fill" data-width="{{ skill.level }}"></div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+    </div>
+</section>
+{% endblock %}

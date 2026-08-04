@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="achievements-section">
+    <div class="container">
+        
+        <!-- Header -->
+        <div class="achievements-header reveal">
+            <h1>Achievements</h1>
+            <p>Milestones, programming awards, and acknowledgments received throughout my career.</p>
+        </div>
+        
+        <!-- Achievements grid -->
+        <div class="achievements-grid">
+            {% for achievement in achievements %}
+            <article class="achievement-card reveal">
+                <span class="achievement-year">{{ achievement.year }}</span>
+                <span class="achievement-badge">{{ achievement.icon }}</span>
+                <h3>{{ achievement.title }}</h3>
+                <p class="achievement-event">{{ achievement.event }}</p>
+                <p>{{ achievement.description }}</p>
+            </article>
+            {% endfor %}
+        </div>
+        
+    </div>
+</section>
+{% endblock %}

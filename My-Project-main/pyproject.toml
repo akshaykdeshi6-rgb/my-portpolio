@@ -1,0 +1,21 @@
+[project]
+name = "akshay-d-portfolio"
+version = "0.1.0"
+description = "Full-stack portfolio web application for Akshay D"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "flask>=3.0.0",
+    "flask-sqlalchemy>=3.1.0",
+    "flask-cors>=4.0.0",
+    "python-dotenv>=1.0.0",
+    "gunicorn>=21.2.0",
+]
+
+[tool.uv]
+package = false
+dev-dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

@@ -1,0 +1,164 @@
+/*
+frontend/static/css/home.css
+Styles specific to the Home page, mimicking the provided reference image layout.
+*/
+
+.hero-section {
+    min-height: calc(100vh - var(--header-height));
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    width: 100%;
+}
+
+/* ── Left Column: Profile Photo & Accent Block ── */
+.hero-image-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 3rem 0 3rem 3rem; /* Leave room for the offset background block */
+}
+
+/* Offset geometric background block */
+.hero-image-bg-block {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80%;
+    height: 80%;
+    background-color: var(--color-bg-alt); /* #eae3db */
+    z-index: 1;
+}
+
+.hero-image {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: top;
+    z-index: 2;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+/* ── Right Column: Text & CTA ── */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.8rem;
+    padding-right: 2rem;
+}
+
+.hero-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.hero-greeting {
+    font-size: 5rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1;
+}
+
+.hero-name {
+    font-size: 4.8rem;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    color: var(--color-text-main);
+}
+
+.hero-description {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    max-width: 480px;
+}
+
+/* Custom rounded outline button matching the image */
+.hero-cta {
+    align-self: flex-start;
+    background-color: transparent;
+    border: 1px solid var(--color-text-main);
+    color: var(--color-text-main);
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    padding: 0.85rem 2.2rem;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.hero-cta:hover {
+    background-color: var(--color-text-main);
+    color: var(--color-bg-base);
+    transform: scale(1.03);
+}
+
+/* ── Responsive Styling ── */
+@media (max-width: 1024px) {
+    .hero-greeting {
+        font-size: 4rem;
+    }
+    .hero-name {
+        font-size: 3.8rem;
+    }
+    .hero-grid {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 4rem 0;
+    }
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .hero-image-wrapper {
+        justify-content: center;
+        padding: 2rem 0 2rem 2rem;
+    }
+    
+    .hero-image {
+        max-width: 340px;
+    }
+    
+    .hero-image-bg-block {
+        width: 75%;
+        height: 75%;
+    }
+    
+    .hero-content {
+        padding-right: 0;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .hero-greeting {
+        font-size: 3.8rem;
+    }
+    
+    .hero-name {
+        font-size: 3.4rem;
+    }
+    
+    .hero-cta {
+        align-self: center;
+    }
+}

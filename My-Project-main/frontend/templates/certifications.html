@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="certs-section">
+    <div class="container">
+        
+        <!-- Header -->
+        <div class="certs-header reveal">
+            <h1>Certifications</h1>
+            <p>Professional credentials, achievements, and courses completed to refine my skill set.</p>
+        </div>
+        
+        <!-- Certs grid -->
+        <div class="certs-grid">
+            {% for cert in certifications %}
+            <article class="cert-card reveal">
+                <div class="cert-badge-wrapper" style="border-color: {{ cert.color }};">
+                    <span>{{ cert.badge }}</span>
+                </div>
+                <h3>{{ cert.title }}</h3>
+                <p class="cert-issuer">Issued by: {{ cert.issuer }}</p>
+                <p class="cert-date">Year: {{ cert.date }}</p>
+                
+                <a href="{{ cert.verify }}" class="cert-verify-link" target="_blank" rel="noopener noreferrer">
+                    <!-- Link arrow icon -->
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                        <path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                    </svg>
+                    Verify Credential
+                </a>
+            </article>
+            {% endfor %}
+        </div>
+        
+    </div>
+</section>
+{% endblock %}
