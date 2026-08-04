@@ -7,7 +7,7 @@ The frontend uses curated color palettes, elegant typography (Cormorant Garamond
 ---
 
 ## 🛠️ Technology Stack
-
+.
 - **Frontend**: HTML5, Vanilla CSS3 (Custom design system), Vanilla JS (ES6)
 - **Backend Framework**: Python (Flask)
 - **Database**: SQLite (via Flask-SQLAlchemy ORM)
