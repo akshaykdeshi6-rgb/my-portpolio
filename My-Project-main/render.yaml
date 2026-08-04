@@ -6,12 +6,13 @@ services:
     name: akshay-d-portfolio
     plan: free
     runtime: python
+    rootDir: My-Project-main
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app
     envVars:
       - key: FLASK_ENV
         value: production
       - key: SECRET_KEY
-        generateValue: true     # Render will auto-generate a secure random secret key
+        generateValue: true
       - key: PYTHON_VERSION
         value: 3.11.15
